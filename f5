@@ -1,0 +1,13 @@
+#!/bin/bash
+echo '-------------------------------------------------'
+killall -9 fastcut > /dev/null 2> /dev/null
+[ -e fastcut ] && rm fastcut > /dev/null
+
+make compile
+
+fn=/home/ors/streams/stream_2019-12-03_11-06-31.flv
+
+[ -e ./fastcut ] && ./fastcut.sh $fn &
+
+inotifywait -q -e modify -e move -e create -e delete $0 *.c Makefile *.sh
+. $0
