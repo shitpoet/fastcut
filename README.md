@@ -2,8 +2,6 @@
 
 fastcut is lightweight, non-reencoding video trimming tool for Linux, written in C using GTK. Uses ffmpeg.
 
-<img src='http://shitpoet.tk/sshots/2017-03-31--121137--248967386.png'>
-
 Requires <a href='https://foicica.com/gtdialog/README.html'>gtdialog</a> in path.
 
 ## Usage
