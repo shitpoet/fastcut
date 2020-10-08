@@ -226,7 +226,7 @@ void do_trim() {
   char* dur = secs_to_time(trim_end - trim_start + 1);
   char* out_fn = fn; //"test.flv";
   sprintf(s,
-    "ffmpeg -ss %s -i %s -to %s -c copy %s",
+    "ffmpeg -ss %s -i %s -to %s -c copy %s.trimmed.flv",
     start, fn, dur, out_fn
   );
   printf("%s \n", s);
@@ -244,7 +244,7 @@ void trim() {
       quit();
     }
   } else {
-    int res = system("eit `gtdialog ok-msgbox --text \"  No changes were made  \" --no-cancel`");
+    int res = system("exit `gtdialog ok-msgbox --text \"  No changes were made  \" --no-cancel`");
     quit();
   }
 }
